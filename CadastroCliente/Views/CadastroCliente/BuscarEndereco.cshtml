@@ -1,0 +1,34 @@
+﻿@using CadastroClienteRepository.Model;
+@model EnderecoModel
+@{
+    ViewData["title"] = "Buscar Endereço";
+}
+
+<div class="container bg-dark p-5 rounded-5">
+    <div class="mg-5 text-center">
+        <h1 class="text-light">Endereço</h1>
+    </div>
+
+    <form method="post" asp-controller="CadastroCliente" asp-action="BuscarEndereco">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label for="Rua" class="form-label text-light">Rua</label>
+            <input type="text" class="form-control text=light" asp-for="Rua" id="Rua" disabled>
+            <span class="text-danger" asp-validation-for="Rua"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Bairro" class="form-label text-light">Bairro</label>
+            <input type="text" class="form-control text=light" asp-for="Bairro" id="Bairro" disabled>
+            <span class="text-danger" asp-validation-for="Bairro"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Cidade" class="form-label text-light">Cidade</label>
+            <input type="text" class="form-control text=light" asp-for="Cidade" id="Cidade" disabled>
+            <span class="text-danger" asp-validation-for="Cidade"></span>
+        </div>
+        <a class="btn btn-primary w-25" asp-controller="CadastroCliente" asp-action="Index">Voltar</a>
+    </form>
+</div>

@@ -1,0 +1,60 @@
+﻿@using CadastroClienteService.Model;
+
+@model ClienteEnderecoViewModel
+@{
+    ViewData["title"] = "Cadastrar Cliente";
+}
+
+<div class="container bg-dark p-5 rounded-5">
+    <div class="mg-5 text-center">
+        <h1 class="text-light">Cadastro de Cliente</h1>
+    </div>
+
+    <form method="post" asp-controller="CadastroCliente" asp-action="Cadastrar">
+
+        <div class="mb-3">
+            <label for="Nome" class="form-label text-light">Nome</label>
+            <input type="text" class="form-control text=light" style="background: #fff" asp-for="Nome" id="Nome" placeholder="  Qual o nome do cliente?">
+            <span class="text-danger" asp-validation-for="Nome"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Sobrenome" class="form-label text-light">Sobrenome</label>
+            <input type="text" class="form-control text=light" style="background: #fff" asp-for="Sobrenome" id="Sobrenome" placeholder="  Qual o sobrenome do cliente?">
+            <span class="text-danger" asp-validation-for="Sobrenome"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Idade" class="form-label text-light">Idade</label>
+            <input type="text" class="form-control text=light" style="background: #fff" asp-for="Idade" id="Idade" placeholder="  Qual a idade do cliente?">
+            <span class="text-danger" asp-validation-for="Idade"></span>
+        </div>
+
+        <div>
+            <h3 class="text-light">Endereço</h3>
+        </div>        
+
+        <div class="mb-3">
+            <label for="Rua" class="form-label text-light">Rua</label>
+            <input type="text" class="form-control text=light" style="background: #fff" asp-for="Rua" id="Rua" placeholder="  Qual a rua do cliente?">
+            <span class="text-danger" asp-validation-for="Rua"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Bairro" class="form-label text-light">Bairro</label>
+            <input type="text" class="form-control text=light" style="background: #fff" asp-for="Bairro" id="Bairro" placeholder="  Qual o bairro do cliente?">
+            <span class="text-danger" asp-validation-for="Bairro"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Cidade" class="form-label text-light">Cidade</label>
+            <input type="text" class="form-control text=light" style="background: #fff" asp-for="Cidade" id="Cidade" placeholder="  Qual a cidade do cliente?">
+            <span class="text-danger" asp-validation-for="Cidade"></span>
+        </div>        
+
+        <div class="d-flex gap-5 mt-5">
+            <button type="submit" class="btn btn-success w-50">Adicionar</button>
+            <a class="btn btn-primary w-50" asp-controller="cadastroCliente" asp-action="Index">Voltar</a>
+        </div>
+    </form>
+</div>
